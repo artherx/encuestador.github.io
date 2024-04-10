@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@img/*": ["./assets/imgs/*"],
+        "@videos/*": ["./assets/videos/*"],
+        // Agrega más alias según sea necesario
+      }
+    },
+}
+  

@@ -1,3 +1,10 @@
+@import url('assets/fonts/fonts.css');
+* {
+    font-family: 'atk-R';
+}
+h1, h2, h3{
+    font-family: 'atk-bold';
+}
 body {
     display: flex;
     flex-direction: column;
@@ -41,6 +48,11 @@ body {
 .head h1{
     margin-right: 10px;
 }
+
+video{
+    border-radius: 10px ;
+}
+
 
 .footer{
     display: flex;

@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'atk-bold';
+    src: url(Atkinson-Hyperlegible-Font-Print-and-Web-2020-0514/WebFonts/WOFF2/Atkinson-Hyperlegible-Bold-102a.woff2);
+}
+@font-face {
+    font-family: 'atk-bold-italic';
+    src: url(Atkinson-Hyperlegible-Font-Print-and-Web-2020-0514/WebFonts/WOFF2/Atkinson-Hyperlegible-BoldItalic-102a.woff2);
+}
+@font-face {
+    font-family: 'atk-italic';
+    src: url(Atkinson-Hyperlegible-Font-Print-and-Web-2020-0514/WebFonts/WOFF2/Atkinson-Hyperlegible-Italic-102a.woff2);
+}
+@font-face {
+    font-family: 'atk-R';
+    src: url(Atkinson-Hyperlegible-Font-Print-and-Web-2020-0514/WebFonts/WOFF2/Atkinson-Hyperlegible-Regular-102a.woff2);
+}

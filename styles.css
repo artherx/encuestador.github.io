@@ -15,6 +15,12 @@ body {
     align-items: center;
     overflow: auto;
 }
+.head button:hover{
+
+    background-color: #80a88b;
+}
+
+@media screen and (min-width: 700px) {
 .head button {
     border: none;
     height: 100%;
@@ -22,15 +28,12 @@ body {
     background-color: #beeccb;
     transition: background-color 0.3s ease;
 }
-.head button:hover{
-
-    background-color: #80a88b;
-}
 
 .head #dividir{
     height: 100%;
     width: 2px;
     background-color: rgba(0, 0, 0, 0.336);
+    border-radius: 20px;
 }
 .head h1{
     padding-right: 20px;
@@ -45,10 +48,38 @@ body {
     background-color: #beeccb;
     margin-bottom: 10px;
     border-bottom-left-radius: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 .head h1{
     margin-right: 10px;
 }
+}
+
+@media screen and (max-width: 700px) {
+    .head {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #beeccb;
+        align-items: center;
+        height: auto;
+    }
+    .head button {
+        width: 100%;
+        height: 100%;
+        background-color: #beeccb;
+        border: none;
+    }
+    .head #dividir {
+        height: 2px; /* Ocultar las divisiones entre los botones */
+        width: 90%;
+        background-color: rgba(0, 0, 0, 0.336);
+        border-radius: 20px;
+        margin: 5px 0;
+    }
+}
+
 
 video{
     border-radius: 10px ;
@@ -80,9 +111,54 @@ video{
     height: 100px;
 }
 .contenido{
+    display: flex;
+    flex-direction: column;
     background-color: rgb(222, 240, 255);
     width: 80%;
     border-radius: 20px;
     padding: 20px;
     margin: 50px;
+}
+#pregunta{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+#pregunta select{
+    border: none;
+    background-color: #6fadca;
+    width: 60%;
+    border-radius: 10px;
+    padding: 10px;
+}
+#pregunta option{
+    background-color: #80a88b;
+}
+#colorinchi{
+    width: 100px;
+    height: 60px;
+    background-color: aquamarine;
+    text-align: center;
+    align-content: center;
+    border-radius: 10px;
+    align-self: center;
+    padding: 10px;
+    
+}
+#resultado{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#IA{
+    width: 100px;
+    height: 50px;
+    border: none;
+    background-color: #80a88b;
+    border-radius: 10px;
+    align-self: self-end;
+    margin-right: 8%;
+    transition: background-color 0.3s ease;
+}
+#IA:hover{
+    background-color: #60a88b
 }

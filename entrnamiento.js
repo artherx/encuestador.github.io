@@ -1,4 +1,5 @@
-import { input } from "./brain";
+/* 
+import OBJbarro from "./Tuki.js"; */
 
 const texto = document.getElementById("resultado");
 const botonA = document.getElementById("IA");
@@ -7,63 +8,168 @@ const selec2 = document.getElementById("SEXO");
 const selec3 = document.getElementById("NOMBRELOCALIDADRESIDENCIA");
 const selec4 = document.getElementById("PERTENENCIAETNICA");
 const selec5 = document.getElementById("TIPOASEGURAMIENTO");
-const selec6 = document.getElementById("ENTIDADADMINISTRADORA");
 
-//*Para el CSV
-const fs = require('./assets/csv/resultado.csv');
-
-function procesarCSV(contenido) {
-  const lineas = contenido.trim().split('\n');
-  const mapa = lineas.map(linea => {
-    const valores = linea.trim().split(',');
-    const entrada = valores.slice(0, -1).map(Number);
-    const output = [Number(valores[valores.length - 1])];
-    return { input: entrada, output: output };
-  });
-  return mapa;
-}
-function cargarCSV(nombreArchivo) {
-  // Lee el contenido del archivo CSV
-  const contenido = fs.readFileSync(nombreArchivo, 'utf8');
-  // Procesa el contenido del CSV y devuelve el mapa
-  return procesarCSV(contenido);
-}
-console.log(cargarCSV(fs))
+/* const barro = OBJbarro.barro; */
 
 const config = {
   binaryThresh: 0.5,
-  hiddenLayers: [72], // array of ints for the sizes of the hidden layers in the network
+  hiddenLayers: [45], // array of ints for the sizes of the hidden layers in the network
   activation: "sigmoid", // supported activation types: ['sigmoid', 'relu', 'leaky-relu', 'tanh']
 };
 let base = [];
-for (let key = 0; key < 72; key++) {
+for (let key = 0; key < 47; key++) {
   base.push("0");
 }
-console.log(base.length);
-const entrenamiento = base.map((entrada) => ({
+console.log(`el tamaño es de ${base.length}`)
+/* console.log(base.length);
+const entrenamiento = barro.map((entrada) => ({
   input: entrada,
   output: [1]
 }));
+barro.forEach((p)=>{
+  const subida =0;
+  console.log(`${subida} estos son los valores`,p)
+  subida++;
+}) */
 const net = new brain.NeuralNetwork(config);
 net.train([
   {
-    input: base,
-    output: [1],
+    input: [0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0
+    ],
+    output: [1]
   },
   {
-    input: base,
-    output: [1],
+    input: [1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+    ],
+    output: [1]
+  },
+  {
+    input: [0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0
+    ],
+    output: [1]
+  },
+  {
+    input: [0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+    ],
+    output: [0]
+  },
+
+  
+  {
+    input: [0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0],
+    output: [1]
+  },
+  {
+    input: [0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0],
+    output: [1]
+  },
+  {
+    input: [0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0],
+    output: [1]
+  },
+  {
+    input: [0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+    ],
+    output: [0]
+  },
+  
+  {
+    input: [0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+    ],
+    output: [1]
+  },
+  {
+    input: [0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+
+    ],
+    output: [1]
+  },
+  {
+    input: [0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+
+    ],
+    output: [1]
+  },
+  {
+    input: [0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0
+
+    ],
+    output: [0]
+  },
+  
+  {
+    input: [0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1
+
+    ],
+    output: [1]
+  },
+  {
+    input: [0,0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1
+
+    ],
+    output: [1]
+  },
+  {
+    input: [0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+
+    ],
+    output: [1]
+  },
+  {
+    input: [1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0
+
+    ],
+    output: [0]
+  },
+  
+  {
+    input: [0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+
+    ],
+    output: [1]
+  },
+  {
+    input: [0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+
+    ],
+    output: [1]
+  },
+  {
+    input: [0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
+
+    ],
+    output: [1]
+  },
+  {
+    input: [0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0
+
+    ],
+    output: [0]
+  },
+  
+  {
+    input: [0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1
+
+    ],
+    output: [1]
+  },
+  {
+    input: [1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0
+    ],
+    output: [1]
   },
 ]);
 botonA.addEventListener("click", () => {
-  for (let i = 1; i <= 7; i++) {
-    // Corregir la condición de iteración
-    console.log(`selec${i} = 1`); // Usar ${selec}${i} para concatenar correctamente
-    base[Number(`selec${i}`)] = "1";
-  }
-  base.forEach((p) => {
-    console.log(p);
-  });
+  
+for (let key = 0; key < 47; key++) {
+  base[key]=0;
+}
+  base[selec1.value]=1;
+  base[selec2.value]=1;
+  base[selec3.value]=1;
+  base[selec4.value]=1;
+  base[selec5.value]=1;
+  console.log("Nuevo estado de base:", base);
   const output = net.run(base);
   texto.textContent = output.toString();
 });

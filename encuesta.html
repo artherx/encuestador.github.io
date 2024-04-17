@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta id="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -23,109 +23,121 @@
     <div class="contenido">
       <div id="pregunta">
         <p>EDAD DEL VULNERADO</p>
-        <select name="GRUPOEDAD">
-          <option value="0">Menor 1 año</option>
-          <option value="1">De 1 - 5 años</option>
-          <option value="2">De 27 - 44 años</option>
-          <option value="3">De 6 - 13 años</option>
-          <option value="4">De 14 - 17 años</option>
-          <option value="5">De 18 - 26 años</option>
-          <option value="6">De 27 - 44 años</option>
-          <option value="7">De 45 - 59 años</option>
-          <option value="8">De 60 - 69 años</option>
-          <option value="9">De 70 - 79 años</option>
-          <option value="10">De 80 - 99 años</option>
+        <select id="GRUPOEDAD">
+          <option value="0">De 1 - 5 años</option>
+          <option value="1">De 6 - 13 años</option>
+          <option value="2">De 14 - 17 años</option>
+          <option value="3">De 18 - 26 años</option>
+          <option value="4">De 27 - 44 años</option>
+          <option value="5">De 45 - 59 años</option>
+          <option value="6">De 60 - 69 años</option>
+          <option value="7">De 70 - 79 años</option>
+          <option value="8">De 80 - 99 años</option>
+          <option value="9">Menor 1 año</option>
         </select>
       </div>
       <div id="pregunta">
         <p>GENERO</p>
-        <select name="SEXO">
-          <option>Mujer</option>
-          <option>Hombre</option>
+        <select id="SEXO">
+          <option value="10">Hombre</option>
+          <option value="11">Mujer</option>
         </select>
       </div>
       <div id="pregunta">
         <p>NOMBRE LOCALIDAD RESIDENCIA</p>
-        <select name="NOMBRELOCALIDADRESIDENCIA">
-          <option value="11">Ciudad Bolívar</option>
-          <option value="12">Usme</option>
-          <option value="13">Tunjuelito</option>
-          <option value="14">Rafael Uribe Uribe</option>
-          <option value="15">Bosa</option>
-          <option value="16">Kennedy</option>
-          <option value="17">Antonio Nariño</option>
-          <option value="18">San Cristóbal</option>
-          <option value="19">Engativá</option>
-          <option value="20">Los Mártinres</option>
-          <option value="21">Puente Aranda</option>
-          <option value="22">Fontibón</option>
-          <option value="23">Santa Fe</option>
-          <option value="24">La Candelaria</option>
+        <select id="NOMBRELOCALIDADRESIDENCIA">
+          <option value="12">Antonio Nariño</option>
+          <option value="13">Barrios Unidos</option>
+          <option value="14">Bosa</option>
+          <option value="15">Chapinero</option>
+          <option value="16">Ciudad Bolívar</option>
+          <option value="17">Engativá</option>
+          <option value="18">Fontibón</option>
+          <option value="19">Kennedy</option>
+          <option value="20">La Candelaria</option>
+          <option value="21">Los Mártires</option>
+          <option value="22">Puente Aranda</option>
+          <option value="23">Rafael Uribe Uribe</option>
+          <option value="24">San Cristóbal</option>
+          <option value="25">Santa Fe</option>
+          <option value="26">Suba</option>
+          <option value="27">Sumapaz</option>
+          <option value="28">Teusaquillo</option>
+          <option value="29">Tunjuelito</option>
+          <option value="30">Usaquén</option>
+          <option value="31">Usme</option>
         </select>
       </div>
       <div id="pregunta">
         <p>PERTENENCIA ETNICA</p>
-        <select name="PERTENENCIAETNICA">
-          <option value="25">Otros</option>
-          <option value="26">AfroColombianos</option>
-          <option value="27">Indígena</option>
-          <option value="28">ROM o gitano</option>
+        <select id="PERTENENCIAETNICA">
+          <option value="32">AfroColombianos</option>
+          <option value="33">Caucásico</option>
+          <option value="34">Indígena</option>
+          <option value="35">Mulato</option>
+          <option value="36">Otros</option>
+          <option value="37">Palenquero</option>
+          <option value="38">ROM o gitano</option>
+          <option value="39">Raizal</option>
         </select>
       </div>
       <div id="pregunta">
         <p>TIPO ASEGURAMIENTO</p>
-        <select name="TIPOASEGURAMIENTO">
-          <option value="29">Subsidiado</option>
-          <option value="30">Contributivo</option>
-          <option value="31">Vinculado</option>
-          <option value="32">Regimen especial</option>
-          <option value="33">Particular</option>
+        <select id="TIPOASEGURAMIENTO">
+          <option value="40">Contributivo</option>
+          <option value="41">Excepción</option>
+          <option value="42">Medicina prepagada</option>
+          <option value="43">Particular</option>
+          <option value="44">Regimen especial</option>
+          <option value="45">Subsidiado</option>
+          <option value="46">Vinculado</option>
         </select>
       </div>
+      <!-- 
       <div id="pregunta">
         <p>ENTIDAD ADMINISTRADORA O EPS</p>
-        <select name="ENTIDADADMINISTRADORA">
-          <option value="34">Capital Salud EPSS SAS</option>
-          <option value="35">Fondo Financiero Distrital Salud</option>
-          <option value="36">ARS Unicajas Cajasalud</option>
-          <option value="37">Salud Total SA</option>
-          <option value="38">Famisanar EPS LTDA</option>
-          <option value="39">Medimas EPS</option>
-          <option value="40">Compensar EPS</option>
-          <option value="41">Sanitas EPS SA</option>
-          <option value="42">Nueva EPS</option>
-          <option value="43">Cruz Blanca EPS SA</option>
-          <option value="44">Sura EPS</option>
-          <option value="45">Nueva EPS SA</option>
-          <option value="46">Cruz Blanca EPS SA</option>
-          <option value="47">Sura EPS</option>
-          <option value="48">Nueva EPS SA</option>
-          <option value="49">Fuerzas Militares</option>
-          <option value="50">Fuerzas Militares</option>
-          <option value="51">Comfacundi CCF de Cundinamarca</option>
-          <option value="52">Compensar EPSS</option>
-          <option value="53">Salud Total EPS</option>
-          <option value="54">Medimas EPSS</option>
-          <option value="55">Mutual Ser ESS</option>
-          <option value="56">Caprecom EPS</option>
-          <option value="57">Convida EPS</option>
-          <option value="58">Asfamilias</option>
-          <option value="59">Policia Nacional</option>
-          <option value="60">Comfaboy EPS CCF de Boyacá</option>
-          <option value="61">Comfamiliar Huila EPS CCF</option>
-          <option value="62">Comfachoco CCF del Chocó</option>
-          <option value="63">Entidad Promotora de Salud Sanitas</option>
-          <option value="64">Saludvida</option>
-          <option value="65">ARS Ecoopsos</option>
-          <option value="66">Universidad Nacional de Colombia Unisalud</option>
-          <option value="67">Comparta</option>
-          <option value="68">Particular</option>
-          <option value="69">Aliansalud EPS</option>
-          <option value="70">ESS Amess</option>
-          <option value="71">Comfamiliar Nariño EPS CCF</option>
-          <option value="72">Comfamiliar de La Guajira EPS CCF</option>
+        <select id="ENTIDADADMINISTRADORA">
+          <option value="34">ARS Cafam</option>
+          <option value="35">ARS Caprecom</option>
+          <option value="36">ARS Colsubsidio</option>
+          <option value="37">ARS Comfenalco</option>
+          <option value="38">ARS Comparta</option>
+          <option value="39">ARS Coosalud</option>
+          <option value="40">ARS Ecoopsos</option>
+          <option value="41">ARS Salud Condor</option>
+          <option value="42">ARS Unicajas Cajasalud</option>
+          <option value="43">Abc Ortodoncia</option>
+          <option value="44">Aic EPSI Asociacion Indigena del Cauca</option>
+          <option value="45">Aig Colombia Seguros de Vida S</option>
+          <option value="46">Aliansalud EPS</option>
+          <option value="47">Aliansalud EPS Antes Colmedica</option>
+          <option value="48">Ambito Comunitario Vista Hermosa</option>
+          <option value="49">Anas Wayuu EPS Indigena</option>
+          <option value="50">Anas Wayuu EPSI</option>
+          <option value="51">Aseguradora El Libertador SA</option>
+          <option value="52">Aseguradora Solidaria de Colombia LTDA Entidad Cooperativa Solidaria</option>
+          <option value="53">Asfamilias,_Asistencia Medica de Emergencia de Santander Limitada Ame Santander LTDA</option>
+          <option value="54">Asistencia Médica Inmediata Servicio de Ambulancia Prepagada SA</option>
+          <option value="55">Asociacion Mutual Barrios Unidos de Quibdo ESS</option>
+          <option value="56">Asociacion Mutual Empresa Solidaria de Salud de Nariño ESS Emssanar ESS</option>
+          <option value="57">Asociacion Mutual La Esperanza Asmet Salud ESS</option>
+          <option value="58">Asociacion Mutual La Suiza de America EPS Indigena</option>
+          <option value="59">Asociacion Mutual Solidaria</option>
+          <option value="60">Asociacion de Cabildos Indigenas del Cesar Dusakawi EPSI</option>
+          <option value="61">Asociación Indígena del Cauca Aic</option>
+          <option value="62">Asociación Mutual Barrios Unidos de Quibdó ESS Ambuq</option>
+          <option value="63">Asociación Mutual Empresa Solidaria de Salud de Nariño ESS</option>
+          <option value="64">Asociación Mutual La Esperanza Asmet Salud</option>
+          <option value="65">psos</option>
+          <option value="66">dad Nacional de Colombia Unisalud</option>
+          <option value="67"></option>
+          <option value="68">ar</option>
+          <option value="69">ud EPS</option>
+          <option value="70">s</option>
+          <option value="71">iar Nariño EPS CCF</option>
+          <option value="72">iar de La Guajira EPS CCF</option>
         </select>
-      </div>
+      </div> -->
       <button id="IA">aceptar</button>
     </div>
     <div class="contenido">
@@ -134,7 +146,7 @@
         <p id="resultado">N/N</p>
       </div>
     </div>
-    <script defer src="//unpkg.com/brain.js"></script>
-    <script defer src="./entrnamiento.js"></script>
+    <script defer type="module" src="//unpkg.com/brain.js"></script>
+    <script defer type="module" src="./entrnamiento.js"></script>
   </body>
 </html>

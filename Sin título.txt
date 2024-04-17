@@ -1,0 +1,21 @@
+
+/* //*Para el CSV
+const fs = require('./assets/csv/resultado.csv');
+
+function procesarCSV(contenido) {
+  const lineas = contenido.trim().split('\n');
+  const mapa = lineas.map(linea => {
+    const valores = linea.trim().split(',');
+    const entrada = valores.slice(0, -1).map(Number);
+    const output = [Number(valores[valores.length - 1])];
+    return { input: entrada, output: output };
+  });
+  return mapa;
+}
+function cargarCSV(nombreArchivo) {
+  // Lee el contenido del archivo CSV
+  const contenido = fs.readFileSync(nombreArchivo, 'utf8');
+  // Procesa el contenido del CSV y devuelve el mapa
+  return procesarCSV(contenido);
+}
+console.log(cargarCSV(fs)) */

@@ -124,6 +124,10 @@ video{
     justify-content: space-around;
     margin: 20px;
 }
+#pregunta p{
+    width: 150px;
+    text-align: left;
+}
 #pregunta select{
     border: none;
     background-color: #6fadca;

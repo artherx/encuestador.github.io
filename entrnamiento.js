@@ -20,7 +20,6 @@ let base = [];
 for (let key = 0; key < 47; key++) {
   base.push("0");
 }
-console.log(`el tamaño es de ${base.length}`)
 /* console.log(base.length);
 const entrenamiento = barro.map((entrada) => ({
   input: entrada,
@@ -138,7 +137,6 @@ for (let key = 0; key < 47; key++) {
   base[selec3.value]=1;
   base[selec4.value]=1;
   base[selec5.value]=1;
-  console.log("Nuevo estado de base:", base);
   const output = net.run(base);
   texto.textContent = output.toString();
 });

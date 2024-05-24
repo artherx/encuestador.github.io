@@ -1,5 +1,6 @@
-/* 
-import OBJbarro from "./Tuki.js"; */
+import barro from "./Tuki.js";
+import datos from "./data.js";
+
 
 const texto = document.getElementById("resultado");
 const botonA = document.getElementById("IA");
@@ -9,134 +10,41 @@ const selec3 = document.getElementById("NOMBRELOCALIDADRESIDENCIA");
 const selec4 = document.getElementById("PERTENENCIAETNICA");
 const selec5 = document.getElementById("TIPOASEGURAMIENTO");
 
-/* const barro = OBJbarro.barro; */
-
 const config = {
   binaryThresh: 0.5,
-  hiddenLayers: [45], // array of ints for the sizes of the hidden layers in the network
+  hiddenLayers: [90], // array of ints for the sizes of the hidden layers in the network
   activation: "sigmoid", // supported activation types: ['sigmoid', 'relu', 'leaky-relu', 'tanh']
 };
-let base = [];
-for (let key = 0; key < 47; key++) {
-  base.push("0");
+let base = barro.barro;
+const dato = datos.datos;
+const mapeando = dato.map((p) => {
+  return {
+    input: Object.values(p),
+    output: [1],
+  };
+});
+console.log("🚀 ~ mapeando ~ mapeando:", mapeando)
+function tienenMismosIdentificadores(arr1, arr2) {
+  const sortedArr1 = arr1.slice().sort();
+  const sortedArr2 = arr2.slice().sort();
+  return JSON.stringify(sortedArr1) === JSON.stringify(sortedArr2);
 }
-/* console.log(base.length);
-const entrenamiento = barro.map((entrada) => ({
-  input: entrada,
-  output: [1]
-}));
-barro.forEach((p)=>{
-  const subida =0;
-  console.log(`${subida} estos son los valores`,p)
-  subida++;
-}) */
 const net = new brain.NeuralNetwork(config);
-net.train([
-  {
-    input: [0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0
-    ],
-    output: [1]
-  },
-  {
-    input: [1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
-    ],
-    output: [1]
-  },
-  {
-    input: [0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0
-    ],
-    output: [1]
-  },
-  {
-    input: [0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
-    ],
-    output: [0]
-  },
-
-  
-  {
-    input: [0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0],
-    output: [1]
-  },
-  {
-    input: [0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0],
-    output: [1]
-  },
-  {
-    input: [0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0],
-    output: [1]
-  },
-  {
-    input: [0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
-    ],
-    output: [0]
-  },
-  
-  {
-    input: [0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
-    ],
-    output: [1]
-  },
-  {
-    input: [0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
-
-    ],
-    output: [1]
-  },
-  {
-    input: [1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0
-
-    ],
-    output: [0]
-  },
-  
-  {
-    input: [0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
-
-    ],
-    output: [1]
-  },
-  {
-    input: [0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
-
-    ],
-    output: [1]
-  },
-  {
-    input: [0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0
-
-    ],
-    output: [1]
-  },
-  {
-    input: [0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0
-
-    ],
-    output: [0]
-  },
-  
-  {
-    input: [0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1
-
-    ],
-    output: [1]
-  },
-  {
-    input: [1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0
-    ],
-    output: [1]
-  },
-]);
+net.train(mapeando, { iterations: 1000 });
 botonA.addEventListener("click", () => {
-  
-for (let key = 0; key < 47; key++) {
-  base[key]=0;
-}
-  base[selec1.value]=1;
-  base[selec2.value]=1;
-  base[selec3.value]=1;
-  base[selec4.value]=1;
-  base[selec5.value]=1;
-  const output = net.run(base);
-  texto.textContent = output.toString();
+  console.log("entra");
+  for (let i = 1; i <= 47; i++) {
+    base[i-1] = 0;
+  }
+  console.log(`te doy ${Object.values(base)}`);
+  base[selec1.value-1] = 1;
+  base[selec2.value-1] = 1;
+  base[selec3.value-1] = 1;
+  base[selec4.value-1] = 1;
+  base[selec5.value-1] = 1;
+  console.log(Object.values(base));
+  const output = net.run(Object.values(base));
+  const final = Object.values(output)*100;
+  console.log(final);
+  texto.textContent = final.toString();
 });

@@ -1,5 +1,6 @@
 import barro from "./Tuki.js";
 import datos from "./data.js";
+import vectorP from "./vectorP.js";
 
 
 const texto = document.getElementById("resultado");
@@ -15,12 +16,20 @@ const config = {
   hiddenLayers: [90], // array of ints for the sizes of the hidden layers in the network
   activation: "sigmoid", // supported activation types: ['sigmoid', 'relu', 'leaky-relu', 'tanh']
 };
+
+
 let base = barro.barro;
 const dato = datos.datos;
-const mapeando = dato.map((p) => {
+
+// Generar un vector con 10,000 datos
+var vector = vectorP.vectorP;
+
+console.log("🚀 ~ datos:", vector)
+const mapeando = dato.map((p,i) => {
+  const outputR = Math.round(Math.random());
   return {
     input: Object.values(p),
-    output: [1],
+    output: [vector[i]],
   };
 });
 console.log("🚀 ~ mapeando ~ mapeando:", mapeando)
@@ -44,7 +53,7 @@ botonA.addEventListener("click", () => {
   base[selec5.value-1] = 1;
   console.log(Object.values(base));
   const output = net.run(Object.values(base));
-  const final = Object.values(output)*100;
+  const final = (Object.values(output))*100;
   console.log(final);
   texto.textContent = final.toString();
 });
